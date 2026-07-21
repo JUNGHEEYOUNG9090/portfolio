@@ -1,0 +1,60 @@
+export const projects = [
+  {
+    id: 1,
+    title: "Parrot RAG",
+    description:
+      "앵무새 지식 문서를 기반으로 답변하는 RAG 챗봇 서비스를 구축하고, 검색 품질 개선과 LLM 응답 생성을 구현했습니다.",
+    stack: [
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "LangSmith",
+      "Groq",
+      "Supabase",
+      "BAAI/bge-m3",
+      "Sentence Transformers",
+      "Tavily",
+      "React",
+      "Vite",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/JUNGHEEYOUNG9090/parrot_rag_service",
+    role: "개인프로젝트",
+  },
+  {
+    id: 2,
+    title: "금방",
+    description:
+      "CLIP 기반 이미지 임베딩 파이프라인을 구축하고 RunPod Serverless를 활용해 대량 이미지 처리 자동화를 구현했습니다.",
+    stack: [
+      "Python",
+      "CLIP",
+      "React",
+      "FastAPI",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Runpod Serverless",
+      "AWS",
+    ],
+    github: "https://github.com/JUNGHEEYOUNG9090/SKN23-FINAL-1Team",
+    role: "Runpod Serverless 파이프라인 담당",
+  },
+  {
+    id: 3,
+    title: "컬처메이트",
+    description:
+      "사용자 간 동행 모집을 위한 웹 서비스를 개발하고 REST API 기반 서비스 구조를 구현했습니다.",
+    stack: [
+      "Java 21",
+      "Spring Boot 3.5",
+      "Spring Security",
+      "JWT",
+      "Oracle Database",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/JUNGHEEYOUNG9090/culture-mate",
+    role: "Backend 개발",
+  },
+];

@@ -1,8 +1,18 @@
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import Home from "./components/sections/Home";
+import Career from "./components/sections/Career";
+import Projects from "./components/sections/Projects";
+
 function App() {
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <h1 className="text-5xl font-bold text-blue-600">Portfolio</h1>
-    </div>
+    <>
+      <Header />
+      <Home />
+      <Career />
+      <Projects />
+      <Footer />
+    </>
   );
 }
 
