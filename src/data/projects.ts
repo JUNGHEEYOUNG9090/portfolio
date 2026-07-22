@@ -19,6 +19,7 @@ export const projects = [
       "Tailwind CSS",
     ],
     github: "https://github.com/JUNGHEEYOUNG9090/parrot_rag_service",
+    detail: "/projects/parrot-rag",
     role: "개인프로젝트",
   },
   {
@@ -37,6 +38,7 @@ export const projects = [
       "AWS",
     ],
     github: "https://github.com/JUNGHEEYOUNG9090/SKN23-FINAL-1Team",
+    detail: "/projects/geumbang",
     role: "Runpod Serverless 파이프라인 담당",
   },
   {
@@ -45,8 +47,8 @@ export const projects = [
     description:
       "사용자 간 동행 모집을 위한 웹 서비스를 개발하고 REST API 기반 서비스 구조를 구현했습니다.",
     stack: [
-      "Java 21",
-      "Spring Boot 3.5",
+      "Java",
+      "Spring Boot",
       "Spring Security",
       "JWT",
       "Oracle Database",
@@ -55,6 +57,7 @@ export const projects = [
       "Tailwind CSS",
     ],
     github: "https://github.com/JUNGHEEYOUNG9090/culture-mate",
+    detail: "/projects/culture-mate",
     role: "Backend 개발",
   },
 ];

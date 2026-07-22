@@ -5,14 +5,7 @@ export const careers = [
     position: "웹개발팀 | 대리",
     description:
       "Java 기반 업무 시스템 개발 및 운영 경험을 바탕으로 공공·금융·물류 분야의 다양한 SI/SM 프로젝트와 고객사 맞춤형 서비스 개발을 수행했습니다.",
-    stack: [
-      "Java",
-      "Spring Framework",
-      "JavaScript",
-      "Oracle",
-      "Vue.js",
-      "Nexacro",
-    ],
+    stack: ["Java", "Spring Framework", "JavaScript", "Oracle", "Nexacro"],
     projects: [
       "공공·금융·물류 시스템 개발 및 유지보수",
       "Oracle 기반 데이터 처리 및 SQL 튜닝",

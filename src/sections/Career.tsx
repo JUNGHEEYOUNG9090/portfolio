@@ -1,4 +1,4 @@
-import { careers } from "../../data/careers";
+import { careers } from "../data/careers";
 
 function Career() {
   return (

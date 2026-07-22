@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 
 type ProjectCardProps = {
@@ -6,6 +7,7 @@ type ProjectCardProps = {
     description: string;
     stack: string[];
     github: string;
+    detail: string;
     role?: string;
   };
 };
@@ -45,14 +47,25 @@ function ProjectCard({ project }: ProjectCardProps) {
         ))}
       </div>
 
-      <a
-        href={project.github}
-        target="_blank"
-        className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700"
-      >
-        <FaGithub size={18} />
-        GitHub
-      </a>
+      <div className="mt-auto border-t border-slate-300 pt-6"></div>
+      <div className="flex gap-3">
+        <Link
+          to={project.detail}
+          className="w-32 rounded-lg bg-blue-600 px-3 py-3 text-center text-sm font-medium text-white"
+        >
+          프로젝트 보기
+        </Link>
+
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-32 flex items-center justify-center gap-2 rounded-lg bg-slate-900 px-3 py-3 text-sm font-medium text-white"
+        >
+          <FaGithub size={18} />
+          GitHub
+        </a>
+      </div>
     </div>
   );
 }
