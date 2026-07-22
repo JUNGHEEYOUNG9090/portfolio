@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import HomePage from "../pages/HomePage";
-import ParrotRag from "../pages/projects/parrotrag";
+import ParrotRag from "../pages/projects/ParrotRag";
 import Geumbang from "../pages/projects/Geumbang";
 import CultureMate from "../pages/projects/CultureMate";
 
