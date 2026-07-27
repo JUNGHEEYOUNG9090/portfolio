@@ -2,7 +2,7 @@ import { careers } from "../data/careers";
 
 function Career() {
   return (
-    <section className="bg-slate-50 px-6 py-20">
+    <section id="career" className="bg-slate-50 px-6 py-20">
       <div className="mx-auto max-w-5xl">
         <h2 className="mb-10 text-3xl font-bold text-slate-900">Career</h2>
 

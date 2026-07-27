@@ -2,9 +2,9 @@ import { FaGithub } from "react-icons/fa";
 
 function Contact() {
   return (
-    <section className="bg-slate-50 px-6 py-20">
+    <section id="contact" className="bg-slate-50 px-6 py-20">
       <div className="mx-auto max-w-5xl">
-        <h2 className="text-4xl font-bold text-slate-900">Contact</h2>
+        <h2 className="mb-10 text-3xl font-bold text-slate-900">Contact</h2>
 
         <div className="mt-8 space-y-3">
           <p>Email: hwarang29@naver.com</p>

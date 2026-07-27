@@ -1,8 +1,8 @@
 function About() {
   return (
-    <section className="py-20">
+    <section id="about" className="py-20">
       <div className="mx-auto max-w-5xl px-6">
-        <p className="mb-3 text-sm font-semibold text-blue-600">ABOUT ME</p>
+        <h2 className="mb-10 text-3xl font-bold text-slate-900">About</h2>
 
         <h2 className="mb-8 text-3xl font-bold text-slate-900">
           백엔드 경험을 기반으로

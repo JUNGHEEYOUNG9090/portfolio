@@ -2,7 +2,7 @@ import { FaGithub, FaEnvelope } from "react-icons/fa";
 
 function Home() {
   return (
-    <section className="bg-slate-50 px-6 py-32">
+    <section id="home" className="bg-slate-50 px-6 py-32">
       <div className="mx-auto max-w-5xl">
         <p className="mb-4 text-lg font-semibold text-blue-600">
           Backend Developer
@@ -15,8 +15,8 @@ function Home() {
         </h1>
 
         <p className="mb-8 max-w-2xl text-lg leading-relaxed text-slate-600">
-          Java/Spring 기반 백엔드 경험을 바탕으로 RAG, LLM, AI 서비스를 구현하는
-          개발자입니다.
+          Java/Spring 기반 백엔드 경험과 Python/FastAPI를 활용하여 RAG, LLM 기반
+          AI 서비스를 구현하는 Backend Developer입니다.
         </p>
 
         <div className="mb-10 flex gap-4">
@@ -37,23 +37,16 @@ function Home() {
         </div>
 
         <div className="flex flex-wrap gap-2">
-          {[
-            "Python",
-            "FastAPI",
-            "RAG",
-            "LLM",
-            "LangChain",
-            "Java",
-            "Spring",
-            "React",
-          ].map((skill) => (
-            <span
-              key={skill}
-              className="rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700"
-            >
-              {skill}
-            </span>
-          ))}
+          {["Python", "FastAPI", "RAG", "LLM", "Java", "Spring Framework"].map(
+            (skill) => (
+              <span
+                key={skill}
+                className="rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700"
+              >
+                {skill}
+              </span>
+            ),
+          )}
         </div>
       </div>
     </section>
