@@ -1,3 +1,7 @@
+import parrotThumbnail from "../../public/images/parrot-rag-thumbnail.png";
+import geumbangThumbnail from "../../public/images/geumbang-thumbnail.gif";
+import culturemateThumbnail from "../../public/images/culturemate-thumbnail.png";
+
 export const projects = [
   {
     id: 1,
@@ -21,6 +25,7 @@ export const projects = [
     github: "https://github.com/JUNGHEEYOUNG9090/parrot_rag_service",
     detail: "/projects/parrot-rag",
     role: "개인프로젝트",
+    thumbnail: parrotThumbnail,
   },
   {
     id: 2,
@@ -40,6 +45,7 @@ export const projects = [
     github: "https://github.com/JUNGHEEYOUNG9090/SKN23-FINAL-1Team",
     detail: "/projects/geumbang",
     role: "Runpod Serverless 파이프라인 담당",
+    thumbnail: geumbangThumbnail,
   },
   {
     id: 3,
@@ -57,7 +63,8 @@ export const projects = [
       "Tailwind CSS",
     ],
     github: "https://github.com/JUNGHEEYOUNG9090/culture-mate",
-    detail: "/projects/culture-mate",
+    detail: "/projects/culturemate",
     role: "Backend 개발",
+    thumbnail: culturemateThumbnail,
   },
 ];

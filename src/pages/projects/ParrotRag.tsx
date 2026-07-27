@@ -9,16 +9,18 @@ function ParrotRag() {
         {/* Header */}
         <section className="mb-16">
           <p className="mb-3 text-sm font-semibold text-blue-600">AI PROJECT</p>
-
           <h1 className="mb-5 text-4xl font-bold text-slate-900">
             Parrot RAG Chatbot
           </h1>
-
           <p className="mb-6 text-lg leading-relaxed text-slate-600">
             앵무새 관련 문서를 기반으로 질문에 답변하는 RAG(Retrieval-Augmented
             Generation) 챗봇 서비스입니다.
           </p>
-
+          <p className="mb-6 text-lg leading-relaxed text-slate-600">
+            약 50~60개의 앵무새 관련 문서를 Markdown으로 전처리하고, Embedding
+            기반 검색과 LLM을 결합하여 문서 근거 기반 답변을 제공하도록
+            구현했습니다.
+          </p>
           {/* Tags */}
           <div className="mb-8 flex flex-wrap gap-2">
             {tags.map((tag) => (
@@ -30,19 +32,18 @@ function ParrotRag() {
               </span>
             ))}
           </div>
-
-          <a
-            href="https://github.com/JUNGHEEYOUNG9090/parrot_rag_service"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white"
-          >
-            <FaGithub />
-            GitHub
-          </a>
+          {/* 대표 이미지 */}
+          <img
+            src="/images/parrot-rag-thumbnail.png"
+            alt="Parrot RAG"
+            className="mx-auto mt-8 mb-10 w-full max-w-3xl rounded-2xl border border-slate-200 shadow-lg"
+          />
+          사용자의 질문은 Embedding 기반 검색을 통해 관련 문서를 찾고,
+          Re-ranking으로 상위 문서를 선별한 뒤 LLM이 최종 답변을 생성합니다.
         </section>
 
         {/* Project Overview */}
+
         <ProjectSection title="프로젝트 소개">
           <p>
             반려동물 AI 서비스는 대부분 개와 고양이에 집중되어 있습니다. 하지만
@@ -72,49 +73,6 @@ function ParrotRag() {
           />
         </ProjectSection>
 
-        {/* Performance */}
-        <ProjectSection title="Retrieval 평가 전략">
-          <p className="mb-5">
-            검색 품질 개선을 위해 99개의 질문-기대 문서 평가셋을 직접 구성하고,
-            Retrieval 결과를 Recall 지표로 비교했습니다.
-          </p>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            <div className="rounded-xl bg-slate-50 p-5">
-              <p className="text-sm text-slate-500">Evaluation Dataset</p>
-
-              <p className="text-2xl font-bold text-slate-900">99 Questions</p>
-            </div>
-
-            <div className="rounded-xl bg-slate-50 p-5">
-              <p className="text-sm text-slate-500">Metrics</p>
-
-              <p className="text-2xl font-bold text-slate-900">
-                Recall@1 / Recall@3
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-6 rounded-xl bg-slate-900 p-5 text-white">
-            <p className="mb-2 font-bold">Evaluation Flow</p>
-
-            <p>
-              질문 입력
-              <br />
-              ↓
-              <br />
-              Retriever 검색 결과 확인
-              <br />
-              ↓
-              <br />
-              기대 문서 포함 여부 비교
-              <br />
-              ↓
-              <br />
-              Recall 계산
-            </p>
-          </div>
-        </ProjectSection>
         {/* Retrieval Improvement */}
         <ProjectSection title="검색 품질 개선 과정">
           <img
@@ -220,10 +178,52 @@ function ParrotRag() {
                 Final Context (3)
               </div>
             </div>
+            <h3 className="mb-4 text-xl font-bold text-slate-900">
+              실험 결과 요약
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full overflow-hidden rounded-xl border border-slate-200">
+                <thead className="bg-slate-900 text-white">
+                  <tr>
+                    <th className="px-4 py-3 text-left">단계</th>
+                    <th className="px-4 py-3 text-left">개선 내용</th>
+                    <th className="px-4 py-3 text-left">결과</th>
+                  </tr>
+                </thead>
+
+                <tbody className="text-slate-700">
+                  <tr className="border-b">
+                    <td className="px-4 py-3">1차</td>
+                    <td className="px-4 py-3">Vector Search 기반 RAG</td>
+                    <td className="px-4 py-3">기본 Pipeline 구축</td>
+                  </tr>
+
+                  <tr className="border-b bg-slate-50">
+                    <td className="px-4 py-3">2차</td>
+                    <td className="px-4 py-3">Markdown Header Chunking</td>
+                    <td className="px-4 py-3">검색 정확도 향상</td>
+                  </tr>
+
+                  <tr className="border-b">
+                    <td className="px-4 py-3">3차</td>
+                    <td className="px-4 py-3">Hybrid Search</td>
+                    <td className="px-4 py-3">Recall 향상, 응답 시간 증가</td>
+                  </tr>
+
+                  <tr className="bg-slate-50">
+                    <td className="px-4 py-3">4차</td>
+                    <td className="px-4 py-3">Re-ranking 적용</td>
+                    <td className="px-4 py-3">
+                      성능과 속도의 균형으로 최종 채택
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
             {/* 결과 */}
-            <div className="rounded-xl bg-slate-900 p-6 text-white">
-              <h3 className="mb-4 text-lg font-bold">Final Evaluation</h3>
+            <div className="mt-8 rounded-xl bg-slate-900 p-6 text-white">
+              <h3 className="mb-4 text-lg font-bold">Final Pipeline</h3>
 
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="rounded-lg bg-white/10 p-4">
@@ -237,28 +237,91 @@ function ParrotRag() {
 
                   <p className="text-3xl font-bold">84.85%</p>
                 </div>
+                <div className="rounded-lg bg-white/10 p-4">
+                  <p className="text-sm text-slate-300">Evaluation Dataset </p>
+                  <p className="text-3xl font-bold">99 Questions</p>
+                </div>
+                <div className="rounded-lg bg-white/10 p-4">
+                  <p className="text-sm text-slate-300">Final Model </p>
+                  <p className="text-3xl font-bold">bge-reranker-base</p>
+                </div>
               </div>
             </div>
           </div>
         </ProjectSection>
 
         {/* Trouble Shooting */}
-        <ProjectSection title="Troubleshooting">
-          <h3 className="mb-2 font-bold">후속 질문 검색 실패 개선</h3>
+        <ProjectSection title="기술적 의사결정">
+          <h3 className="mb-2 text-lg font-bold">후속 질문 검색 실패 개선</h3>
 
+          <h4 className="mt-4 font-semibold text-slate-800">문제</h4>
           <p>
-            짧은 후속 질문이 들어오는 경우 검색 정확도가 떨어지는 문제를
-            해결하기 위해 이전 대화 이력을 활용하여 검색 Query를 보강했습니다.
+            "그럼 먹여도 돼?", "그건?"과 같은 짧은 후속 질문은 이전 대화 맥락이
+            반영되지 않아 검색 정확도가 떨어졌습니다.
           </p>
 
-          <h3 className="mb-2 font-bold">Reranker 모델 선택</h3>
-
+          <h4 className="mt-4 font-semibold text-slate-800">해결</h4>
           <p>
-            초기에는 bge-reranker-large 모델을 적용했으나, 검색 품질 대비 응답
-            시간이 증가하는 문제가 있었습니다. 실험 결과 성능과 속도의 균형을
-            고려하여 bge-reranker-base 모델을 최종 적용했습니다.
+            이전 대화 이력을 함께 전달하여 검색 Query를 보강하고, 문맥을 반영한
+            Retrieval이 가능하도록 개선했습니다.
+          </p>
+
+          <h4 className="mt-4 font-semibold text-slate-800">결과</h4>
+          <p>
+            후속 질문에서도 이전 대화의 맥락을 유지하여 검색 정확도를 향상시킬
+            수 있었습니다.
+          </p>
+
+          <h3 className="mt-10 mb-2 text-lg font-bold">Reranker 모델 선택</h3>
+
+          <h4 className="mt-4 font-semibold text-slate-800">문제</h4>
+          <p>
+            bge-reranker-large는 검색 품질은 우수했지만 응답 시간이 크게
+            증가했습니다.
+          </p>
+
+          <h4 className="mt-4 font-semibold text-slate-800">해결</h4>
+          <p>bge-reranker-base와 성능 및 응답 시간을 비교 평가했습니다.</p>
+
+          <h4 className="mt-4 font-semibold text-slate-800">결과</h4>
+          <p>
+            검색 성능을 유지하면서 응답 시간을 줄일 수 있어 최종 Pipeline에는
+            bge-reranker-base를 적용했습니다.
+          </p>
+
+          <h3 className="mt-10 mb-2 text-lg font-bold">
+            Hybrid Search 최종 제외
+          </h3>
+
+          <h4 className="mt-4 font-semibold text-slate-800">문제</h4>
+          <p>
+            Hybrid Search 적용 결과 일부 질의에서 Recall은 향상되었지만, 검색
+            과정이 추가되면서 응답 시간이 증가했습니다.
+          </p>
+
+          <h4 className="mt-4 font-semibold text-slate-800">해결</h4>
+          <p>
+            Recall과 응답 시간을 함께 비교 평가한 결과, Recall은 약 1~2% 향상된
+            반면 응답 시간은 크게 증가하는 것을 확인했습니다.
+          </p>
+
+          <h4 className="mt-4 font-semibold text-slate-800">결과</h4>
+          <p>
+            성능 향상 대비 응답 시간 증가가 더 크다고 판단하여 최종 서비스
+            Pipeline에서는 Hybrid Search를 제외했습니다..
           </p>
         </ProjectSection>
+      </div>
+      <div className="mt-16 flex justify-center border-t border-slate-200 pt-10">
+        <a
+          href="https://github.com/JUNGHEEYOUNG9090/parrot_rag_service"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-6 py-4 text-white font-medium hover:bg-slate-800 transition"
+        >
+          <FaGithub />
+          GitHub
+        </a>
       </div>
     </div>
   );
