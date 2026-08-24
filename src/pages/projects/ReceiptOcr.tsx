@@ -40,7 +40,7 @@ function ReceiptOcr() {
 
           {/* 대표 이미지 */}
           <img
-            src="/images/recept-ocr_thumbnail.png"
+            src="/images/receipt-ocr-thumbnail.png"
             alt="Receipt AI"
             className="mx-auto mt-8 mb-10 w-full max-w-3xl rounded-2xl border border-slate-200 shadow-lg"
           />
@@ -80,17 +80,11 @@ function ReceiptOcr() {
         {/* Architecture */}
         <ProjectSection title="시스템 아키텍처">
           <div className="rounded-xl bg-slate-50 p-6 text-center text-slate-700">
-            <p>React</p>
-            <p className="my-2">↓</p>
-            <p>Spring Boot</p>
-            <p className="my-2">↓</p>
-            <p>Python FastAPI OCR Server</p>
-            <p className="my-2">↓</p>
-            <p>PaddleOCR-VL 1.6</p>
-            <p className="my-2">↓</p>
-            <p>LLM 검증 및 데이터 구조화</p>
-            <p className="my-2">↓</p>
-            <p>Excel 생성</p>
+            <img
+              src="/images/receipt-pipeline.png"
+              alt="영수증 업로드"
+              className="mx-auto w-full max-w-3xl rounded-xl border border-slate-200"
+            />
           </div>
 
           <p className="mt-6">
@@ -110,22 +104,18 @@ function ReceiptOcr() {
             PaddleOCR-VL 1.6
           </h3>
 
+          <div className="mt-6 rounded-lg bg-slate-50 p-5 text-sm text-slate-700">
+            <img
+              src="/images/receipt-ocr-pipeline.png"
+              alt="영수증 업로드"
+              className="mx-auto w-full max-w-3xl rounded-xl border border-slate-200"
+            />
+          </div>
+
           <p>
             영수증 이미지 분석에는 PaddleOCR-VL 1.6을 사용했습니다. OCR 처리는
             Python FastAPI 서버에서 수행하며 GPU를 활용하도록 구성했습니다.
           </p>
-
-          <div className="mt-6 rounded-lg bg-slate-50 p-5 text-sm text-slate-700">
-            <p>Image Upload</p>
-            <p className="my-2">↓</p>
-            <p>PaddleOCR-VL</p>
-            <p className="my-2">↓</p>
-            <p>OCR Result</p>
-            <p className="my-2">↓</p>
-            <p>LLM Validation</p>
-            <p className="my-2">↓</p>
-            <p>Structured Data</p>
-          </div>
         </ProjectSection>
 
         {/* Performance */}
@@ -231,7 +221,7 @@ function ReceiptOcr() {
           </h3>
 
           <img
-            src="/images/01-upload.png"
+            src="/images/receipt-upload.png"
             alt="영수증 업로드"
             className="mx-auto w-full max-w-3xl rounded-xl border border-slate-200"
           />
@@ -241,7 +231,7 @@ function ReceiptOcr() {
           </h3>
 
           <img
-            src="/images/02-processing.png"
+            src="/images/receipt-processing.png"
             alt="OCR 분석 중"
             className="mx-auto w-full max-w-3xl rounded-xl border border-slate-200"
           />
@@ -251,7 +241,7 @@ function ReceiptOcr() {
           </h3>
 
           <img
-            src="/images/03-excel.png"
+            src="/images/receipt-excel.png"
             alt="Excel 결과"
             className="mx-auto w-full max-w-3xl rounded-xl border border-slate-200"
           />
@@ -283,7 +273,6 @@ function ReceiptOcr() {
           </div>
         </ProjectSection>
 
-        {/* GitHub */}
         <div className="mt-16 flex flex-wrap justify-center gap-4 border-t border-slate-200 pt-10">
           <a
             href="https://github.com/JUNGHEEYOUNG9090/receipt_project"
@@ -292,7 +281,7 @@ function ReceiptOcr() {
             className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-6 py-4 font-medium text-white transition hover:bg-slate-800"
           >
             <FaGithub />
-            Receipt AI GitHub
+            GitHub
           </a>
 
           <a
