@@ -142,10 +142,8 @@ function ParrotRag() {
               </div>
 
               <p className="text-slate-600">
-                Vector Search와 Keyword Search를 결합하여 검색 성능 개선을
-                시도했습니다. 일부 질의에서는 Recall 향상을 확인했지만, 추가
-                검색 과정으로 인해 응답 시간이 증가하여 성능과 속도의 균형을
-                고려한 결과 최종 Pipeline에서는 제외했습니다.
+                Vector Search와 Keyword Search를 결합하여 검색 후보를
+                확보했습니다.
               </p>
             </div>
 
@@ -167,7 +165,7 @@ function ParrotRag() {
               </p>
 
               <div className="rounded-lg bg-white p-4 text-sm text-slate-700 shadow-sm">
-                Retrieved Documents (10)
+                Retrieved Documents (20)
                 <br />
                 ↓
                 <br />
@@ -207,7 +205,9 @@ function ParrotRag() {
                   <tr className="border-b">
                     <td className="px-4 py-3">3차</td>
                     <td className="px-4 py-3">Hybrid Search</td>
-                    <td className="px-4 py-3">Recall 향상, 응답 시간 증가</td>
+                    <td className="px-4 py-3">
+                      Vector + Keyword 검색 적용 및 후보 검색 개선
+                    </td>
                   </tr>
 
                   <tr className="bg-slate-50">
@@ -287,28 +287,6 @@ function ParrotRag() {
           <p>
             검색 성능을 유지하면서 응답 시간을 줄일 수 있어 최종 Pipeline에는
             bge-reranker-base를 적용했습니다.
-          </p>
-
-          <h3 className="mt-10 mb-2 text-lg font-bold">
-            Hybrid Search 최종 제외
-          </h3>
-
-          <h4 className="mt-4 font-semibold text-slate-800">문제</h4>
-          <p>
-            Hybrid Search 적용 결과 일부 질의에서 Recall은 향상되었지만, 검색
-            과정이 추가되면서 응답 시간이 증가했습니다.
-          </p>
-
-          <h4 className="mt-4 font-semibold text-slate-800">해결</h4>
-          <p>
-            Recall과 응답 시간을 함께 비교 평가한 결과, Recall은 약 1~2% 향상된
-            반면 응답 시간은 크게 증가하는 것을 확인했습니다.
-          </p>
-
-          <h4 className="mt-4 font-semibold text-slate-800">결과</h4>
-          <p>
-            성능 향상 대비 응답 시간 증가가 더 크다고 판단하여 최종 서비스
-            Pipeline에서는 Hybrid Search를 제외했습니다..
           </p>
         </ProjectSection>
       </div>
