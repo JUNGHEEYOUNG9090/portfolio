@@ -275,7 +275,7 @@ function ReceiptOcr() {
 
         <div className="mt-16 flex flex-wrap justify-center gap-4 border-t border-slate-200 pt-10">
           <a
-            href="https://github.com/JUNGHEEYOUNG9090/receipt_project"
+            href="https://github.com/JUNGHEEYOUNG9090/receipt_ai"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-6 py-4 font-medium text-white transition hover:bg-slate-800"
