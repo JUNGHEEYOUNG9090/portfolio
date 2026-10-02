@@ -4,8 +4,8 @@ function ReceiptAccountingAgent() {
   const tags = [
     "Python",
     "FastAPI",
+    "OpenAI Vision",
     "LangGraph",
-    "OpenAI",
     "Supabase",
     "React",
     "PaddleOCR",
@@ -25,6 +25,11 @@ function ReceiptAccountingAgent() {
           <p className="mb-6 text-lg leading-relaxed text-slate-600">
             영수증 데이터를 기반으로 지출 내역을 자동으로 분류하고 가계부에
             저장하는 AI Agent 서비스입니다.
+          </p>
+
+          <p className="mb-6 text-lg leading-relaxed text-slate-600">
+            OpenAI Vision API를 활용하여 영수증 이미지를 직접 분석하고, OCR +
+            LLM 방식과 비교하여 추출 정확도와 처리 비용을 검증했습니다.
           </p>
 
           <p className="mb-6 text-lg leading-relaxed text-slate-600">
@@ -50,7 +55,6 @@ function ReceiptAccountingAgent() {
             className="mx-auto max-h-[600px] rounded-xl"
           />
         </section>
-
         {/* Project Overview */}
         <ProjectSection title="프로젝트 소개">
           <p>
@@ -69,7 +73,6 @@ function ReceiptAccountingAgent() {
             데이터에 대해서만 LangGraph를 통해 AI 분류를 수행합니다.
           </p>
         </ProjectSection>
-
         {/* Problem */}
         <ProjectSection title="프로젝트 목표">
           <div className="grid gap-6 md:grid-cols-3">
@@ -89,13 +92,12 @@ function ReceiptAccountingAgent() {
             />
           </div>
         </ProjectSection>
-
         {/* Features */}
         <ProjectSection title="주요 기능">
           <div className="grid gap-6 md:grid-cols-2">
             <FeatureCard
-              title="영수증 데이터 추출"
-              description="OCR 또는 Vision을 이용하여 영수증의 상품명, 수량, 금액 등의 데이터를 구조화합니다."
+              title="OpenAI Vision 기반 영수증 분석"
+              description="OpenAI Vision API에 영수증 이미지를 직접 전달하여 상품명, 수량, 금액 등의 데이터를 구조화합니다."
             />
 
             <FeatureCard
@@ -114,7 +116,6 @@ function ReceiptAccountingAgent() {
             />
           </div>
         </ProjectSection>
-
         {/* Accounting Flow */}
         <ProjectSection title="가계부 처리 흐름">
           <p className="mb-8">
@@ -136,7 +137,7 @@ function ReceiptAccountingAgent() {
               </div>
 
               <div className="rounded-xl bg-white p-5 text-slate-900">
-                <p className="font-bold">Vision</p>
+                <p className="font-bold">OpenAI Vision API</p>
                 <p className="mt-1 text-sm text-slate-500">
                   이미지에서 직접 영수증 데이터 추출
                 </p>
@@ -182,7 +183,6 @@ function ReceiptAccountingAgent() {
             </div>
           </div>
         </ProjectSection>
-
         {/* LangGraph */}
         <ProjectSection title="LangGraph Workflow">
           <p>
@@ -196,7 +196,7 @@ function ReceiptAccountingAgent() {
               <p className="font-bold text-slate-900">영수증 분석 결과</p>
 
               <p className="mt-1 text-sm text-slate-500">
-                OCR + LLM 또는 Vision
+                OCR + LLM 또는 OpenAI Vision API
               </p>
             </div>
 
@@ -257,12 +257,12 @@ function ReceiptAccountingAgent() {
 
             <div className="rounded-xl border border-slate-200 bg-slate-50 p-6">
               <h4 className="mb-3 font-bold text-slate-900">
-                Vision 결과 기반 실행
+                OpenAI Vision API 결과 기반 실행
               </h4>
 
               <p className="text-sm">
-                Vision으로 생성한 영수증 데이터를 State로 구성한 뒤 동일한
-                Receipt Pipeline으로 전달합니다.
+                OpenAI Vision API으로 생성한 영수증 데이터를 State로 구성한 뒤
+                동일한 Receipt Pipeline으로 전달합니다.
               </p>
 
               <div className="mt-4 rounded-lg bg-slate-900 p-4 font-mono text-sm text-white">
@@ -317,14 +317,25 @@ function ReceiptAccountingAgent() {
                 <br />
                 조건부 분기
                 <br />
-                ↓
+                ↙　　　　↘
                 <br />
-                필요한 경우에만 AI
+                이미 분류됨　　미분류
+                <br />
+                ↓　　　　　　↓
+                <br />
+                기존 결과　　 AI 분류
+                <br />
+                재사용　　　　 ↓
+                <br />
+                　↘　　　　↙
+                <br />
+                가계부 데이터 처리
               </div>
 
               <p className="mt-4 text-sm">
-                DB 상태에 따라 기존 결과를 재사용하거나 AI 분류를 수행하도록
-                Workflow를 구성했습니다.
+                DB 상태를 확인한 후 이미 분류된 데이터는 기존 결과를 재사용하고,
+                미분류 데이터만 AI 분류를 수행하도록 조건부 Workflow를
+                구성했습니다.
               </p>
             </div>
           </div>
@@ -409,13 +420,12 @@ function ReceiptAccountingAgent() {
             </div>
           </div>
         </ProjectSection>
-
         {/* AI Comparison */}
         <ProjectSection title="영수증 분석 방식 비교">
           <p>
-            가계부에 사용할 데이터를 생성하는 과정에서는 OCR + LLM과 Vision
-            방식을 비교했습니다. 동일한 영수증을 대상으로 정확도, 처리 시간,
-            비용을 측정했습니다.
+            가계부에 사용할 데이터를 생성하는 과정에서는 OCR + LLM과 OpenAI
+            Vision API 방식을 비교했습니다. 동일한 영수증을 대상으로 정확도,
+            처리 시간, 비용을 측정했습니다.
           </p>
 
           <div className="mt-6 grid gap-6 md:grid-cols-2">
@@ -431,11 +441,13 @@ function ReceiptAccountingAgent() {
             </div>
 
             <div className="rounded-xl border border-slate-200 p-6">
-              <h3 className="mb-3 text-lg font-bold text-slate-900">Vision</h3>
+              <h3 className="mb-3 text-lg font-bold text-slate-900">
+                OpenAI Vision API
+              </h3>
 
               <p>
-                영수증 이미지를 Vision 모델에 직접 전달하여 구조화된 데이터를
-                생성합니다.
+                영수증 이미지를 OpenAI Vision API 모델에 직접 전달하여 구조화된
+                데이터를 생성합니다.
               </p>
             </div>
           </div>
@@ -462,7 +474,6 @@ function ReceiptAccountingAgent() {
             </div>
           </div>
         </ProjectSection>
-
         {/* Technical Decisions */}
         <ProjectSection title="기술적 의사결정">
           <Decision
@@ -485,7 +496,6 @@ function ReceiptAccountingAgent() {
             description="PaddleOCR은 별도의 FastAPI 서버에서 실행하고 메인 Agent에서는 OCR 결과를 전달받아 이후 처리를 담당하도록 구성했습니다."
           />
         </ProjectSection>
-
         {/* Demo */}
         <ProjectSection title="Demo">
           <h3 className="mb-3 text-lg font-bold text-slate-900">
@@ -552,11 +562,10 @@ function ReceiptAccountingAgent() {
           />
 
           <p className="mt-4">
-            OCR + LLM과 Vision 방식으로 생성한 영수증 데이터를 비교하여 추출
-            결과와 처리 비용을 확인했습니다.
+            OCR + LLM과 OpenAI Vision API 방식으로 생성한 영수증 데이터를
+            비교하여 추출 결과와 처리 비용을 확인했습니다.
           </p>
         </ProjectSection>
-
         {/* GitHub */}
         <div className="mt-16 flex justify-center border-t border-slate-200 pt-10">
           <a
