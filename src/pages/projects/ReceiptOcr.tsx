@@ -22,9 +22,8 @@ function ReceiptOcr() {
           <h1 className="mb-5 text-4xl font-bold text-slate-900">Receipt AI</h1>
 
           <p className="mb-6 text-lg leading-relaxed text-slate-600">
-            영수증 이미지를 업로드하면 PaddleOCR-VL 기반 OCR과 LLM을 이용해
-            영수증 데이터를 추출하고 Excel 파일로 변환하는 AI 자동화
-            서비스입니다.
+            Java/Spring Boot와 Python/FastAPI를 REST API로 연동하여 PaddleOCR-VL
+            기반 영수증 OCR 및 LLM 데이터 처리를 구현한 AI 자동화 서비스입니다.
           </p>
 
           <div className="mb-8 flex flex-wrap gap-2">
@@ -46,22 +45,29 @@ function ReceiptOcr() {
           />
 
           <p className="text-lg leading-relaxed text-slate-600">
-            영수증 이미지를 업로드하면 OCR 서버에서 내용을 분석하고, 추출된
-            데이터를 LLM으로 검증 및 구조화한 후 Excel 파일로 자동 변환합니다.
+            Spring Boot를 중심으로 서비스 서버를 구성하고, GPU가 필요한 OCR
+            처리는 Python FastAPI 서버로 분리했습니다. 두 서버는 REST API를 통해
+            통신하며 OCR 결과를 LLM으로 검증 및 구조화한 후 Excel 파일로
+            변환합니다.
           </p>
         </section>
 
         {/* Project Overview */}
         <ProjectSection title="프로젝트 소개">
           <p>
-            영수증을 매월 수기로 확인하고 Excel로 정리하는 작업을 자동화하기
-            위해 개발했습니다.
+            Java/Spring Boot 기반 백엔드에 AI 처리 서버를 연동하는 구조를
+            구현하기 위해 개발했습니다.
           </p>
 
           <p className="mt-4">
-            영수증 이미지에서 상품명, 수량, 금액 등의 정보를 OCR로 추출한 뒤
-            LLM을 활용하여 데이터를 검증하고 구조화하는 방식으로 반복적인 입력
-            작업을 줄이는 것을 목표로 했습니다.
+            영수증 이미지 처리는 GPU 환경이 필요한 PaddleOCR-VL을 사용하므로
+            Python FastAPI 서버로 분리하고, Spring Boot에서 REST API를 통해 OCR
+            서버를 호출하도록 구성했습니다.
+          </p>
+
+          <p className="mt-4">
+            OCR 결과는 LLM을 활용해 검증 및 구조화하고, 최종 데이터를 Spring
+            Boot에서 Excel 파일로 생성하도록 구현했습니다.
           </p>
         </ProjectSection>
 

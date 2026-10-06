@@ -34,9 +34,9 @@ export const projects = [
   },
   {
     id: 1,
-    title: "Receipt AI",
+    title: "AI OCR 연동 서비스",
     description:
-      "영수증 이미지를 업로드하면 PaddleOCR-VL 기반 OCR을 이용해 영수증 데이터를 추출하고 LLM으로 추론하여 Excel 파일로 변환하는 JAVA / AI 자동화 서비스입니다.",
+      "Java/Spring Boot와 Python/FastAPI를 REST API로 연동하여 PaddleOCR-VL 기반 영수증 OCR 및 LLM 데이터 변환을 구현한 AI 자동화 서비스입니다.",
     stack: [
       "Python",
       "Java",
