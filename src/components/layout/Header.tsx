@@ -9,9 +9,9 @@ function Header() {
         </Link>
 
         <nav className="flex gap-6 text-sm text-slate-600">
+          <a href="/#projects">Projects</a>
           <a href="/#about">About</a>
           <a href="/#career">Career</a>
-          <a href="/#projects">Projects</a>
           <a href="/#contact">Contact</a>
         </nav>
       </div>

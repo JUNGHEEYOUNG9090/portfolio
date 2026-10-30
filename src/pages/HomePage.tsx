@@ -11,9 +11,9 @@ function HomePage() {
     <>
       <Header />
       <Home />
+      <Projects />
       <About />
       <Career />
-      <Projects />
       <Contact />
       <Footer />
     </>
